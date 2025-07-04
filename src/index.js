@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
+import CountCalculation from './UseEffect';
+import Component1 from './UseContext';
 //import Counter from './Counter';
 
 // first component
@@ -106,9 +108,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
   
 // </Main>);
-root.render(<TaskManager id="1">
-  
-</TaskManager>);
+//root.render(<CountCalculation/>);
+root.render(<Component1/>);
 
 // setInterval(()=> {
 //   root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
