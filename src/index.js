@@ -72,7 +72,8 @@ import ReactDOM from 'react-dom/client';
 //   );
 // }
 
-function TaskManager() {
+function TaskManager(props) {
+  console.log(props);
   const [tasks, setTask] = useState([
     {id:1,name:"Aaron"},
     {id:2,name:"Brown"}
@@ -83,6 +84,10 @@ function TaskManager() {
     setTask([...tasks, newTask]);
   }
 
+  const removeTask = ()=> {
+    setTask(tasks.filter(task => task.id !== 1));
+  };
+
   return(
     <>
       <ul>
@@ -91,6 +96,7 @@ function TaskManager() {
         ))}
       </ul>
       <button onClick={addTask}>Add Task</button>
+      <button onClick={removeTask}>Remove Task</button>
     </>
   )
 }
@@ -100,7 +106,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
   
 // </Main>);
-root.render(<TaskManager>
+root.render(<TaskManager id="1">
   
 </TaskManager>);
 
