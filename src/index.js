@@ -44,11 +44,26 @@ function Main(props) {
     </div>)
 };
 
+const tasks = ["Write an article", "Review code", "Fix bugs"];
+
+function TaskList() {
+  return (
+    <ul>
+      {tasks.map((task, index) => (
+        <li key={index}>{task}</li>
+      ))}
+    </ul>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
+// root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
   
-</Main>);
+// </Main>);
+root.render(<TaskList>
+  
+  </TaskList>);
 
 // setInterval(()=> {
 //   root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
