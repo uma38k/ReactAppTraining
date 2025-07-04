@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
-import Counter from './Counter';
+//import Counter from './Counter';
 
 // first component
 // function Clock() {
@@ -26,50 +26,73 @@ import Counter from './Counter';
 // }
 
 // second component
-function Main(props) {
-  console.log(props)
-  var [toggle, setToggle] = useState(true)
-  function handleClick() {
-    setToggle(!toggle);
-  }
-  return(<div>
-      <h1>Hello World!! - {props.msg}</h1>
-      <h2>Welcome to React!!!</h2>
-      <Counter/>
-      <hr/>
-      {toggle ? <Counter/> : ""}
-      <hr/>
-      <button onClick={handleClick}>Toggle second counter</button>
-      <h2>Contact Us</h2>
-    </div>)
-};
+// function Main(props) {
+//   console.log(props)
+//   var [toggle, setToggle] = useState(true)
+//   function handleClick() {
+//     setToggle(!toggle);
+//   }
+//   return(<div>
+//       <h1>Hello World!! - {props.msg}</h1>
+//       <h2>Welcome to React!!!</h2>
+//       <Counter/>
+//       <hr/>
+//       {toggle ? <Counter/> : ""}
+//       <hr/>
+//       <button onClick={handleClick}>Toggle second counter</button>
+//       <h2>Contact Us</h2>
+//     </div>)
+// };
 
-const tasks = ["Write an article", "Review code", "Fix bugs"];
+// const tasks = ["Write an article", "Review code", "Fix bugs"];
 
-function TaskList() {
-  return (
-    <ul>
-      {tasks.map((task, index) => (
-        <li key={index}>{task}</li>
-      ))}
-    </ul>
-  );
-}
+// function TaskList() {
+//   return (
+//     <ul>
+//       {tasks.map((task, index) => (
+//         <li key={index}>{task}</li>
+//       ))}
+//     </ul>
+//   );
+// }
 
-const tasks1 = [
-  { id: 1, name: "Write an article1" },
-  { id: 2, name: "Review code" },
-  { id: 3, name: "Fix bugs" }
-];
+// const tasks1 = [
+//   { id: 1, name: "Write an article1" },
+//   { id: 2, name: "Review code" },
+//   { id: 3, name: "Fix bugs" }
+// ];
  
-function TaskList1() {
-  return (
-    <ul>
-      {tasks1.map(task => (
-        <li key={task.id}>{task.name}</li>
-      ))}
-    </ul>
-  );
+// function TaskList1() {
+//   return (
+//     <ul>
+//       {tasks1.map(task => (
+//         <li key={task.id}>{task.name}</li>
+//       ))}
+//     </ul>
+//   );
+// }
+
+function TaskManager() {
+  const [tasks, setTask] = useState([
+    {id:1,name:"Aaron"},
+    {id:2,name:"Brown"}
+  ]);
+
+  const addTask = ()=> {
+    var newTask = {id:Date.now(), name:"Charlie"};
+    setTask([...tasks, newTask]);
+  }
+
+  return(
+    <>
+      <ul>
+        {tasks.map(task => (
+          <li key={task.id}>{task.name}</li>
+        ))}
+      </ul>
+      <button onClick={addTask}>Add Task</button>
+    </>
+  )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -77,9 +100,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
   
 // </Main>);
-root.render(<TaskList1>
+root.render(<TaskManager>
   
-  </TaskList1>);
+</TaskManager>);
 
 // setInterval(()=> {
 //   root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
