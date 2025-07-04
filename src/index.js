@@ -56,14 +56,30 @@ function TaskList() {
   );
 }
 
+const tasks1 = [
+  { id: 1, name: "Write an article1" },
+  { id: 2, name: "Review code" },
+  { id: 3, name: "Fix bugs" }
+];
+ 
+function TaskList1() {
+  return (
+    <ul>
+      {tasks1.map(task => (
+        <li key={task.id}>{task.name}</li>
+      ))}
+    </ul>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
   
 // </Main>);
-root.render(<TaskList>
+root.render(<TaskList1>
   
-  </TaskList>);
+  </TaskList1>);
 
 // setInterval(()=> {
 //   root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">
