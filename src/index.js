@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import CountCalculation from './UseEffect';
 import Component1 from './UseContext';
+import ToDoList from './ToDoList';
 //import Counter from './Counter';
 
 // first component
@@ -74,34 +75,34 @@ import Component1 from './UseContext';
 //   );
 // }
 
-function TaskManager(props) {
-  console.log(props);
-  const [tasks, setTask] = useState([
-    {id:1,name:"Aaron"},
-    {id:2,name:"Brown"}
-  ]);
+// function TaskManager(props) {
+//   console.log(props);
+//   const [tasks, setTask] = useState([
+//     {id:1,name:"Aaron"},
+//     {id:2,name:"Brown"}
+//   ]);
 
-  const addTask = ()=> {
-    var newTask = {id:Date.now(), name:"Charlie"};
-    setTask([...tasks, newTask]);
-  }
+//   const addTask = ()=> {
+//     var newTask = {id:Date.now(), name:"Charlie"};
+//     setTask([...tasks, newTask]);
+//   }
 
-  const removeTask = ()=> {
-    setTask(tasks.filter(task => task.id !== 1));
-  };
+//   const removeTask = ()=> {
+//     setTask(tasks.filter(task => task.id !== 1));
+//   };
 
-  return(
-    <>
-      <ul>
-        {tasks.map(task => (
-          <li key={task.id}>{task.name}</li>
-        ))}
-      </ul>
-      <button onClick={addTask}>Add Task</button>
-      <button onClick={removeTask}>Remove Task</button>
-    </>
-  )
-}
+//   return(
+//     <>
+//       <ul>
+//         {tasks.map(task => (
+//           <li key={task.id}>{task.name}</li>
+//         ))}
+//       </ul>
+//       <button onClick={addTask}>Add Task</button>
+//       <button onClick={removeTask}>Remove Task</button>
+//     </>
+//   )
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -109,7 +110,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
   
 // </Main>);
 //root.render(<CountCalculation/>);
-root.render(<Component1/>);
+root.render(<ToDoList />);
 
 // setInterval(()=> {
 //   root.render(<Main msg="Capgemini" fn="Hello" ln="World!!">

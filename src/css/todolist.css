@@ -1,0 +1,30 @@
+.todo-list {
+    border: 1px solid black;
+    width: 300px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+.todo-list li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.todo-list li span.toggle-complete {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+.todo-list li.completed span.toggle-complete {
+    background-color: brown;
+}
+
+.todo-list li.completed span.toggle-complete + span {
+    text-decoration: line-through;
+}
