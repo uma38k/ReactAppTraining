@@ -7,6 +7,7 @@ import Counter from './Counter';
 import Clock from './Clock';
 import Main from './Main';
 import ListKey from './ListKey';
+import WeatherApp from './WeatherApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,5 +16,5 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<ToDoList />);
 // root.render(<Counter />);
 // root.render(<Clock />);
-root.render(<ListKey />);
-
+// root.render(<Main org="Capgemini" fn="Aaron" ln="Brown" />);
+root.render(<WeatherApp />);
