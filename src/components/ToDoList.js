@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './css/todolist.css';
+import '../css/todolist.css';
 
 function ToDoList() {
     const [task, setTask] = useState('');

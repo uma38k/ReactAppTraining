@@ -1,20 +1,36 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CountCalculation from './UseEffect';
-import Component1 from './UseContext';
-import ToDoList from './ToDoList';
-import Counter from './Counter';
-import Clock from './Clock';
-import Main from './Main';
-import ListKey from './ListKey';
-import WeatherApp from './WeatherApp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from './pages/Nav';
+import CountCalculation from './pages/UseEffect';
+import Component1 from './pages/UseContext';
+import ToDoList from './components/ToDoList';
+import Counter from './pages/Counter';
+import Clock from './pages/Clock';
+import Main from './pages/Main';
+import ListKey from './pages/ListKey';
+import WeatherApp from './components/WeatherApp';
+
+export default function App() {
+    return (
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Nav />}>
+            <Route index element={<Main org="Capgemini" fn="Aaron" ln="Brown" />} />
+            <Route path="listkey" element={<ListKey />} />
+            <Route path="clock" element={<Clock />} />
+            <Route path="counter" element={<Counter />} />
+            <Route path="usecontext" element={<Component1 />} />
+            <Route path="useeffect" element={<CountCalculation />} />
+            <Route path="todoapp" element={<ToDoList />} />
+            <Route path="weatherapp" element={<WeatherApp />} />
+            <Route path='*' element={<h2>404 - Page not found</h2>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// root.render(<CountCalculation />);
-// root.render(<Component1 />);
-// root.render(<ToDoList />);
-// root.render(<Counter />);
-// root.render(<Clock />);
-// root.render(<Main org="Capgemini" fn="Aaron" ln="Brown" />);
-root.render(<WeatherApp />);
+root.render(<App />);
