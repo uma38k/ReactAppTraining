@@ -19,6 +19,12 @@ const Nav = () => {
             <Link to="/counter">Counter</Link>
           </li>
           <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/registration">Registration Form</Link>
+          </li>
+          <li>
             <Link to="/usecontext">UseContext</Link>
           </li>
           <li>

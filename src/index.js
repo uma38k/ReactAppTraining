@@ -10,6 +10,8 @@ import Counter from './pages/Counter';
 import Clock from './pages/Clock';
 import Main from './pages/Main';
 import ListKey from './pages/ListKey';
+import Contact from './pages/Contact';
+import RegistrationForm from './pages/RegistrationForm';
 //import WeatherApp from './components/WeatherApp';
 
 function Loading({error}) {
@@ -39,6 +41,8 @@ export default function App() {
             <Route path="listkey" element={<ListKey />} />
             <Route path="clock" element={<Clock />} />
             <Route path="counter" element={<Counter />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="registration" element={<RegistrationForm />} />
             <Route path="usecontext" element={<Component1 />} />
             <Route path="useeffect" element={<CountCalculation />} />
             <Route path="todoapp" element={<ToDoList />} />
